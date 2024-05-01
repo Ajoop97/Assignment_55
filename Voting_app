@@ -1,0 +1,42 @@
+"☝️ Delete them in same order 
+1st ► VOTE pod ► Observe what happens both in frontEnd & in Unix
+ 
+Deleted pod manually, as vote pod is deployed in replica=1 hence vote pod again create automatically. so there is no impact after deleting vote pod manually.
+ 
+ 
+2nd ► WORKER pod  ► Observe what happens both in frontEnd & in Unix
+ 
+Worker pod is deployed with replica=1 hence after deleting pod manually worker pod recreated again.
+ 
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+ 
+old:
+worker-6fc5d5b668-dm84m   1/1     Running   0          13m
+ 
+after deleting pod: 
+worker-6fc5d5b668-qj8t2   1/1     Running   0          24s
+ 
+3rd ► DB pod ► Observe what happens both in frontEnd & in Unix"
+ 
+Vote/Result interface was opening but result interface was not updating correct values after vote.
+ 
+ 
+Vote: http://52.77.234.211:31000/
+Result: http://52.77.234.211:31001/ 
+
+
+================================================
+1. Commands that you used during the assignment.
+>> ALready mentioned
+
+2. snapshot of logs (wherever possible)
+>> Unfortunately couldn't took the Snapshot and now those instances permissions has been revoked.
+
+3. your comment on WHY result app STOPPED working after db pod stop
+>> Because db Pod were storing the data so when it deleted all the data was gone so result app stopped working.
+
+4. your answer to HOW YOU MADE THE RESULT POD work.
+>> By recreating them again.Removed the pods and again installed it.
+
+5. Some jargons (just names are enough- dont need sentences) that you learnt from the 40-hour Training session
+>> Very Interactive, Practical and Knowledgbale session.
