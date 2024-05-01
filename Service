@@ -1,0 +1,31 @@
+Q.) You have deployed an application, that is listening at port 8000. You used a replica-set to deploy it and created a NodePort service to make it accessible. But when you test it, somehow the application is not reachable at the port. Write down your approach and sequentially all the steps that you will take to find out the issue.
+
+>> If the application deployed using a ReplicaSet is not reachable at port 8000 despite creating a NodePort service, here's a sequential approach to diagnose and troubleshoot the issue.
+
+1) Verify Deployment and ReplicaSet.
+    Use 'kubectl get deployments' and 'kubectl get replicasets' commands to ensure that the deployment and replica set are running and have the desired no. of replicas.
+
+2) Check Pods.
+    Use 'kubectl get pods' to verify that the pods are in a running state and have no errors or issues. 
+
+3) Inspect Pod Logs.
+    Use 'kubectl logs <pod_name>' to inspect the logs of one of the pods. Look for any error messages or indications of the application failing to start or listen on port 8000.
+
+4) Verify Container Configuration.
+    Check the container configuration in the deployment YAML file or using 'kubectl describe deployment <deployment_name>' to ensure that the container is configured to listen on port 8000.
+
+5) Check Service configuration.
+    Verify the NodePrt service configuration using 'kubectl describe service <service_name>' to ensure that it is correctly configured to expose port 8000 on all nodes.
+
+6) Check NodePort Assignment.
+    Use 'kubectl get svc <service_name>' to verify the NodePort assigned to the service.
+
+7) Check Node connectivity.
+    Ensure that there are no networks issues preventing connectivity to the nodes. We can use tools like 'telnet' or 'nc' (netcat) to test the connectivity to the NodePort from outside the cluster.
+
+8) Security groups or Firewalls.
+9) Check NodePort Binding.
+10) NodePort Forwarding.
+11) Inspect Node logs.
+12) Review Kubernetes Events.
+    Use 'kubectl get events' to review Kubernetes events for any warnings or errors related to the deployement , pods, or services.
