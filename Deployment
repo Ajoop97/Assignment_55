@@ -1,0 +1,10 @@
+Q.) Suppose you have deployed your application using a deployment controller. Assume the initial number of replicas is one. Write the steps needed to update a container's image using deployment, making sure that there is zero downtime.
+
+>> Updating a container's image in a Kubernetes Deployment while ensuring zero downtime involves a rolling update strategy. Here are the steps we can follow to achieve this:
+
+1) Update the Docker Image.
+2) Update the Deployment Configuration.
+3) Check Deployment status.
+4) Verify Application Health.
+5) Rollback (if needed)
+6) Monitor thr Rollout.
